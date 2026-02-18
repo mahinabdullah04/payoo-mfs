@@ -52,6 +52,7 @@
           <fieldset class="fieldset">
             <label class="label text-neutral font-bold">Mobile Number</label>
             <input
+              id="input-number"
               maxlength="11"
               minlength="6"
               type="text"
@@ -61,6 +62,7 @@
             <br />
             <label class="label text-neutral font-bold">4 Digit Pin</label>
             <input
+            id="input-pin"
               maxlength="4"
               minlength="4"
               type="password"
@@ -68,7 +70,9 @@
               placeholder="Enter 4 digit  PIN"
             />
             <div><a class="link link-hover">Forgot password?</a></div>
-            <button class="btn btn-primary mt-4 rounded-full">Login</button>
+            <button id="login-btn" class="btn btn-primary mt-4 rounded-full">
+              Login
+            </button>
           </fieldset>
         </div>
       </div>
