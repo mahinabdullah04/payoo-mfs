@@ -12,8 +12,21 @@ function getBalance() {
 }
 
 // machine value -> set balance
-function setBalance(value){
-    const balanceEl = document.getElementById('balance');
-    balanceEl.innerText = value;
+function setBalance(value) {
+  const balanceEl = document.getElementById("balance");
+  balanceEl.innerText = value;
 }
 
+// machine id -> hide all > show id
+function showOnly(id) {
+  const addMoney = document.getElementById("add-money");
+  const cashOut = document.getElementById("cashout");
+
+  // hide all
+  addMoney.classList.add("hidden");
+  cashOut.classList.add("hidden");
+
+  // show only the id
+  const selected = document.getElementById(id);
+  selected.classList.remove("hidden");
+}
