@@ -24,47 +24,25 @@ document.getElementById("cashout-btn").addEventListener("click", function () {
     console.log("New Balance:", newBalance);
     // change the balance view
     setBalance(newBalance);
+    // saving transaction in history-container
+    // 1 getting history container
+    const history = document.getElementById("history-container");
+
+    // 2 create new div
+    const newHistory = document.createElement("div");
+
+    // 3 new div > inner html
+    newHistory.innerHTML = `
+        <div class="transaction-card p-5 bg-base-100">
+            Cashout ${cashoutAmount} Successful to ${cashoutNumber} at ${new Date()}
+        </div>
+
+    `;
+    // 4 history container . append (new div)
+    history.append(newHistory);
   } else {
     // 5.2 false, throw error alert, return
     alert("Invalid PIN!");
     return;
   }
 });
-
-// document.getElementById("cashout-btn").addEventListener("click", function () {
-//   // 1 get agent num and validate
-//   const cashoutNumberInput = document.getElementById("cashout-number");
-//   const cashoutNumber = cashoutNumberInput.value;
-
-//   // 2 get the amount, validate, convert to num
-//   const cashoutAmountInput = document.getElementById("cashout-amount");
-
-//   const cashoutAmount = cashoutAmountInput.value;
-
-//   // 3 get curr balance, validate, convert to num
-//   const balanceElement = document.getElementById("balance");
-//   const balance = balanceElement.innerText;
-
-//   // 4 calc new balance
-//   const newBalance = Number(balance) - Number(cashoutAmount);
-
-//   if (newBalance < 0) {
-//     alert("Invalid Amount!");
-//     return;
-//   }
-
-//   // 5 get pin and verify
-//   const pin = document.getElementById("cashout-pin").value;
-
-//   if (pin === "1234") {
-//     // 5.1 true, show alert > set balance
-//     alert("Cashout Successful!");
-//     console.log("New Balance:", newBalance);
-//     // change the balance view
-//     balanceElement.innerText = newBalance;
-//   } else {
-//     // 5.2 false, throw error alert, return
-//     alert("Invalid PIN!");
-//     return;
-//   }
-// });
